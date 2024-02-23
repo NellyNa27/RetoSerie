@@ -1,28 +1,36 @@
 //Desarrollar una "clase" con un método que entregue el término n de la serie.
-class RetoSerie {
+class RetoPrimo {
     // Realizar cada una de las Series numéricas
     // Serie 1: Número primo - true
-    // El número primo es un núm mayor que 1 
+
     //El número primo tiene dos divisores: 1 y él mismo (ejemplo: 2-3-5)
             seriePrimo(valorNumero) {
-            if (valorNumero <= 0) return false;
-            //creamos variable para que nos diga cuantas veces divimos el numero
-            let contador = 0;
-            for (var i = 1; i <= valorNumero ; i++) {
-                //división exacta
-                if (valorNumero % i === 0) valorNumero++;
+                // valorNumero es un núm mayor que 1 (para que sea primo)
+            if (valorNumero <= 1) {
+                return false;
             }
-            if (valorNumero === 2) return true;
-                    return false;
+            //Vemos si tiene un divisor entre dos y la raiz cuadrada de valorNumero
+            for (let i = 2; i <= Math.sqrt(valorNumero); i++) {
+                //división exacta
+                if (valorNumero % i === 0 ) 
+                return false; // si valorNumero tiene otro divisor, no es primo
+            }
+        
+                return true;
             }
         }
-        
         //Instancia de una clase
-        const nPrimo = new RetoSerie();
-
+        const nPrimo = new RetoPrimo();
     console.log ("Número 1= " + nPrimo.seriePrimo(1));
     console.log ("Número 2= " + nPrimo.seriePrimo(2));
-
+    console.log ("Número 3= " + nPrimo.seriePrimo(3));
+    console.log ("Número 4= " + nPrimo.seriePrimo(4));
+    console.log ("Número 5= " + nPrimo.seriePrimo(5));
+    console.log ("Número 6= " + nPrimo.seriePrimo(6));
+    console.log ("Número 7= " + nPrimo.seriePrimo(7));
+    console.log ("Número 8= " + nPrimo.seriePrimo(8));
+    console.log ("Número 9= " + nPrimo.seriePrimo(9));
+    console.log ("Número 10= " + nPrimo.seriePrimo(10));
     /*
     // Serie 2: Número Fibonacci
     // Recursividad o recurrencia
